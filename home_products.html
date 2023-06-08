@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link href="home_products.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        const cartButton = document.getElementById('cartButton');
+        const checkmark = document.querySelector('.checkmark');
+
+        cartButton.addEventListener('click', function () {
+            cartButton.classList.toggle('added');
+            checkmark.classList.toggle('added');
+
+            if (cartButton.classList.contains('added')) {
+                cartButton.innerHTML = 'Added';
+            } else {
+                cartButton.innerHTML = 'Add to Cart';
+            }
+        });
+    </script>
+    <title>Sticker Club | Home</title>
+
+</head>
+
+<body>
+    <script src="home_products.js"></script>
+    <main>
+        <div class="row">
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/11.png" class="equilibrium-image" alt="aespa-sticker">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">K-pop Aespa Vinyl</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25
+                        ETH
+                        <span><button id="cartButton" class="cart-button">Add to Cart</button><span class="checkmark">&#10003;</span></span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/33.png" class="equilibrium-image" alt="jujutsu-sticker">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">Jujutsu Kaisen Vinyl</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
+                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/39.png" class="equilibrium-image" alt="nwjns-sticker">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">NewJeans Vinyl</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
+                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/45.png" class="equilibrium-image" alt="pinoy-2.0">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">Pinoy 2.0 Stickers Vinyl</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25
+                        ETH
+                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/53.png" class="equilibrium-image" alt="strawberry-kiwi">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">Strawberry & Kiwi Dessert</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
+                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="flex-box">
+                    <div class="top-image">
+                        <img src="images/56.png" class="equilibrium-image" alt="pinoy-3.0">
+                        <div class="icon-background">
+                            <img src="images/icon-view.svg" class="icon-view">
+                        </div>
+                    </div>
+
+                    <div class="equilibrium-header">Pinoy 3.0 Stickers Vinyl</div>
+
+                    <p> Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
+                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    </div>
+                    <hr>
+                    <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
+                            alt="clock icon">
+                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </main>
+
+    </div>
+</body>
+
+</html>
