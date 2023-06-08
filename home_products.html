@@ -11,27 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    <script type="text/javascript">
-        const cartButton = document.getElementById('cartButton');
-        const checkmark = document.querySelector('.checkmark');
-
-        cartButton.addEventListener('click', function () {
-            cartButton.classList.toggle('added');
-            checkmark.classList.toggle('added');
-
-            if (cartButton.classList.contains('added')) {
-                cartButton.innerHTML = 'Added';
-            } else {
-                cartButton.innerHTML = 'Add to Cart';
-            }
-        });
-    </script>
     <title>Sticker Club | Home</title>
 
 </head>
 
 <body>
-    <script src="home_products.js"></script>
     <main>
         <div class="row">
             <div class="column">
@@ -45,16 +29,15 @@
 
                     <div class="equilibrium-header">K-pop Aespa Vinyl</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Celebrate the magic of K-pop with Aespa.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25
-                        ETH
-                        <span><button id="cartButton" class="cart-button">Add to Cart</button><span class="checkmark">&#10003;</span></span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">29 PHP
+                        <span><button class="add-to-cart" id="product1">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>K-Pop</div>
                     </div>
                 </div>
             </div>
@@ -69,15 +52,15 @@
 
                     <div class="equilibrium-header">Jujutsu Kaisen Vinyl</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Enter the dark world of Jujutsu Kaisen.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
-                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 PHP
+                        <span><button class="add-to-cart" id="product2">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>Anime</div>
                     </div>
                 </div>
             </div>
@@ -92,15 +75,15 @@
 
                     <div class="equilibrium-header">NewJeans Vinyl</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Express your style of fashion and self-expression with NewJeans.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
-                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">29 PHP
+                        <span><button class="add-to-cart" id="product3">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>K-Pop</div>
                     </div>
                 </div>
             </div>
@@ -118,16 +101,15 @@
 
                     <div class="equilibrium-header">Pinoy 2.0 Stickers Vinyl</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Show your Pinoy pride with these vibrant stickers.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25
-                        ETH
-                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 PHP
+                        <span><button class="add-to-cart" id="product4">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>Pinoy</div>
                     </div>
                 </div>
             </div>
@@ -142,15 +124,15 @@
 
                     <div class="equilibrium-header">Strawberry & Kiwi Dessert</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Indulge in the sweetness of Strawberry & Kiwi.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
-                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">35 PHP
+                        <span><button class="add-to-cart" id="product5">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>StickerClub Line</div>
                     </div>
                 </div>
             </div>
@@ -165,25 +147,42 @@
 
                     <div class="equilibrium-header">Pinoy 3.0 Stickers Vinyl</div>
 
-                    <p> Our Equilibrium collection promotes balance and calm.</p>
+                    <p> Upgrade your sticker game with Pinoy 3.0.</p>
 
-                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 ETH
-                        <span><img src="images/icon-clock.svg" class="icon" alt="clock icon">3 days left</span>
+                    <div class="crypto-cost"><img src="images/icon-ethereum.svg" class="icon" alt="ethereum icon">25 PHP
+                        <span><button class="add-to-cart" id="product6">Add to Cart</button></span>
                     </div>
                     <hr>
                     <div class="creation"><img src="images/stickerclub circle logo PNG.png" class="icon-avatar"
                             alt="clock icon">
-                        <div class="creation-name"><span>Creation of </span>Sticker Club</div>
+                        <div class="creation-name"><span>Category </span>Pinoy</div>
                     </div>
                 </div>
             </div>
         </div>
-
-
         </div>
     </main>
-
     </div>
+    <script>
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const productId = button.id;
+                const addedText = 'Added';
+
+                if (button.innerText !== addedText) {
+                    button.innerText = addedText;
+                    button.style.backgroundColor = 'blue';
+
+                    setTimeout(function () {
+                        button.innerText = 'Add to Cart';
+                        button.style.backgroundColor = '#007bff';
+                    }, 3000);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

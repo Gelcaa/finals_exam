@@ -16,15 +16,18 @@ body {
 }
 
 .equilibrium-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
-    width: 300px;
+    width: 250px;
     border-radius: 10px;
-    margin: 0px auto 20px;
+    margin-bottom: 20px;
 }
 
 .flex-box {
     background-color: hsl(216, 50%, 16%);
-    height: 540px;
+    height: 480px;
     width: 300px;
     border-radius: 1.2rem;
     padding: 1.5rem;
@@ -130,23 +133,12 @@ p {
     padding: 10px;
 }
 
-/* Add to Cart */
-.cart-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+/* Add To Cart */
+.add-to-cart {
+    padding: 0.2cm;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-}
-
-.cart-button.added {
-    background-color: #ccc;
-}
-
-.checkmark {
-    display: none;
-}
-
-.added .checkmark {
-    display: inline;
 }
