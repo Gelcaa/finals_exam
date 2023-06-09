@@ -1,3 +1,10 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is logged in and retrieve the username
+$username = isset($_SESSION["username"]) ? $_SESSION["username"] : "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
