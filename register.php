@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -13,8 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO customertbl (username, password) VALUES ('$username', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registration successful!";
-    // Redirect the user to a different page or perform other actions
+        mysqli_close($conn);
+
+        // Display a registration successful pop-up
+        $_SESSION["username"] = $username; // Store the username in the session
+        echo '<script>alert("Registration Successful!");</script>';
+        // Redirect to home_products.php
+        echo '<script>window.location.href = "home_products.php";</script>';
+        exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

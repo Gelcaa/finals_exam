@@ -177,55 +177,43 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : "";
     </main>
     </div>
     <script>
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        // Retrieve the add-to-cart buttons
+        var addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-        addToCartButtons.forEach(button => {
+        // Add event listeners to each add-to-cart button
+        addToCartButtons.forEach(function (button) {
             button.addEventListener('click', function () {
-                // const productId = button.id;
-                const product = button.getAttribute('data-product');
                 const addedText = 'Added';
+                var product = this.getAttribute('data-product');
+                var quantity = 1; // Initial quantity
 
                 if (button.innerText !== addedText) {
                     button.innerText = addedText;
                     button.style.backgroundColor = 'blue';
 
-                    // Send an AJAX request to update the cart
-                    const xhr = new XMLHttpRequest();
-                    const url = 'test.php'; // Update the URL to match your server-side script
-
-                    // Fetch the username dynamically
-                    const username = '<?php echo isset($_SESSION["username"]) ? $_SESSION["username"] : "" ?>';
-
-                    const params = 'username=' + encodeURIComponent(username) + '&product=' + encodeURIComponent(product);
-
-                    // debug the JavaScript code 
-                    console.log('Username:', username);
-                    console.log('Product:', product);
-                    console.log('Params:', params);
-
-                    xhr.open('POST', url, true);
-                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
+                    // Send an AJAX request to a PHP script to handle the cart update
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'add_to_cart.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
                     xhr.onreadystatechange = function () {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                // Handle the successful response from the server
-                                console.log(xhr.responseText);
-                            } else {
-                                // Handle the error response from the server
-                                console.error('Request failed. Error code: ' + xhr.status);
-                            }
+                        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                            // Handle the response
+                            console.log(xhr.responseText);
                         }
                     };
 
-                    xhr.send(params);
+                    // Construct the request data
+                    var requestData = 'username=<?php echo urlencode($username); ?>&product=' + encodeURIComponent(product) + '&quantity=' + quantity;
+
+                    // Send the request
+                    xhr.send(requestData);
 
                     setTimeout(function () {
                         button.innerText = 'Add to Cart';
                         button.style.backgroundColor = '#007bff';
-                    }, 3000);
+                    }, 2000);
                 }
-            });
+            }); // Closing parenthesis moved here
         });
     </script>
 </body>
