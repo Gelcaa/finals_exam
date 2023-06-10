@@ -174,11 +174,19 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : "";
             </div>
         </div>
         </div>
+        <div class="row">
+            <div class="column" style="text-align: center;">
+                <button class="checkout-button" onclick="window.location.href = 'checkout.php';">Go To Cart</button>
+            </div>
+        </div>
+
     </main>
     </div>
     <script>
         // Retrieve the add-to-cart buttons
         var addToCartButtons = document.querySelectorAll('.add-to-cart');
+        // Retrieve the checkout button
+        var checkoutButton = document.querySelector('.checkout-button');
 
         // Add event listeners to each add-to-cart button
         addToCartButtons.forEach(function (button) {
@@ -213,7 +221,11 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : "";
                         button.style.backgroundColor = '#007bff';
                     }, 2000);
                 }
-            }); // Closing parenthesis moved here
+            });
+        });
+        checkoutButton.addEventListener('click', function () {
+            // Redirect to checkout.php
+            window.location.href = 'checkout.php';
         });
     </script>
 </body>

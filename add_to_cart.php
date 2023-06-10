@@ -6,59 +6,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product = $_POST["product"];
     $quantity = $_POST["quantity"];
 
-    // Establish database connection
-    $conn = mysqli_connect("localhost", "root", "", "stickerclubdb");
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    // Check if the cart items exist in the session
+    if (isset($_SESSION["cart_items"])) {
+        // Check if the product already exists in the cart items
+        $existingItemIndex = -1;
+        foreach ($_SESSION["cart_items"] as $index => $cartItem) {
+            if ($cartItem["username"] === $username && $cartItem["product"] === $product) {
+                $existingItemIndex = $index;
+                break;
+            }
+        }
 
-    // Check if the customer exists
-    $sql = "SELECT username FROM customertbl WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Fetch the customer's username
-        $row = mysqli_fetch_assoc($result);
-        $customer_username = $row["username"];
-
-        // Check if the product already exists in the order_items table
-        $sql = "SELECT quantity FROM order_items WHERE customer_username = ? AND product_name = ?";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "ss", $customer_username, $product);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        if (mysqli_num_rows($result) == 1) {
+        if ($existingItemIndex !== -1) {
             // Product already exists, update the quantity
-            $row = mysqli_fetch_assoc($result);
-            $existingQuantity = $row["quantity"];
-
-            $updateSql = "UPDATE order_items SET quantity = ? WHERE customer_username = ? AND product_name = ?";
-            $updateStmt = mysqli_prepare($conn, $updateSql);
-            $newQuantity = $existingQuantity + $quantity;
-            mysqli_stmt_bind_param($updateStmt, "iss", $newQuantity, $customer_username, $product);
-            mysqli_stmt_execute($updateStmt);
-            mysqli_stmt_close($updateStmt);
-
-            echo "Product quantity updated successfully.";
+            $_SESSION["cart_items"][$existingItemIndex]["quantity"] += $quantity;
         } else {
-            // Product does not exist, insert a new row
-            $insertSql = "INSERT INTO order_items (customer_username, product_name, quantity) VALUES (?, ?, ?)";
-            $insertStmt = mysqli_prepare($conn, $insertSql);
-            mysqli_stmt_bind_param($insertStmt, "ssi", $customer_username, $product, $quantity);
-            mysqli_stmt_execute($insertStmt);
-            mysqli_stmt_close($insertStmt);
-
-            echo "Product added to cart successfully.";
+            // Product does not exist, add a new item
+            $cartItem = [
+                "username" => $username,
+                "product" => $product,
+                "quantity" => $quantity
+            ];
+            $_SESSION["cart_items"][] = $cartItem;
         }
     } else {
-        echo "Invalid customer.";
+        // Create an array to store the cart items
+        $_SESSION["cart_items"] = [];
+
+        // Add the cart item to the session variable
+        $cartItem = [
+            "username" => $username,
+            "product" => $product,
+            "quantity" => $quantity
+        ];
+        $_SESSION["cart_items"][] = $cartItem;
     }
 
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
+    echo "Cart item stored temporarily.";
 }
 ?>
